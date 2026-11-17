@@ -1,0 +1,68 @@
+/* ДЗ по разделу 5: то, чего нет в стилях основного сайта */
+
+.hero--dz { grid-template-columns: 1fr; padding-bottom: 28px; }
+.hero--dz p { max-width: 720px; }
+.map__ring--inf span { font-size: 20px; color: var(--c); }
+.report { white-space: pre-wrap; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; font: 14px/1.5 var(--body); color: var(--text); margin-top: 12px; }
+.train__lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+
+/* --- шесть правил --- */
+.rules { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 12px; }
+.rule { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 6px 12px; background: var(--panel-2); border-radius: 16px; padding: 14px 16px; line-height: 1.45; }
+.rule__n { grid-row: span 3; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--pink) 18%, #fff); border: 2px solid var(--pink); font: 700 15px var(--head); }
+.rule__f .m { font-size: 22px; }
+.rule__t { font-size: 15px; }
+.rule__p { font-size: 14px; color: var(--muted); background: var(--bg); border-radius: 10px; padding: 6px 10px; }
+
+/* --- галерея --- */
+.gal { display: flex; flex-direction: column; gap: 18px; }
+.gal__h { font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+.gal__h small { font-weight: 600; color: var(--muted); font-size: 14px; margin-left: 6px; }
+.gal__row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 10px; }
+.gal__ex { margin: 0; background: var(--bg); border-radius: 14px; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.gal__f .m { font-size: 18px; }
+.gal__n { font-size: 13px; color: var(--muted); line-height: 1.35; }
+
+/* --- цепочка шагов --- */
+.chainv { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.chainv__step { width: 150px; display: flex; flex-direction: column; gap: 4px; align-items: center; background: var(--bg); border-radius: 12px; padding: 6px; }
+.chainv__arrow { display: flex; flex-direction: column; align-items: center; font-size: 22px; color: var(--pink); font-weight: 800; max-width: 110px; text-align: center; }
+.chainv__arrow small { font-size: 12px; color: var(--muted); font-weight: 600; line-height: 1.2; }
+
+/* --- рисование по шагам --- */
+.draw__head { font-size: 20px; font-weight: 700; }
+.draw__head .m { font-size: 24px; }
+.stepper { display: flex; flex-direction: column; gap: 6px; }
+.stepper__row { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: center; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); opacity: 0.6; }
+.stepper__row small { color: var(--muted); font-size: 13px; }
+.stepper__row .m { font-size: 18px; }
+.stepper__row.is-on { opacity: 1; border-color: var(--pink); background: color-mix(in srgb, var(--pink) 6%, #fff); }
+.stepper__row.is-done { opacity: 1; border-color: rgba(23, 163, 74, 0.45); }
+.stepper__n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--panel-2); border: 1px solid var(--line); font-weight: 800; font-size: 14px; }
+.stepper__row.is-done .stepper__n { background: var(--green); color: #fff; border-color: var(--green); }
+.options--col { flex-direction: column; }
+.options--col .option { width: 100%; }
+.options.is-locked .option { cursor: default; }
+.options.is-locked .option:not(.is-on) { opacity: 0.5; }
+
+/* --- доска --- */
+.brd { display: flex; flex-direction: column; gap: 10px; }
+.brd .plot { aspect-ratio: 1 / 1; max-height: min(78vh, 640px); }
+.brd .plot-canvas { touch-action: none; }
+.brd__bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.brd__msg { border-radius: 12px; padding: 10px 14px; font-size: 15px; line-height: 1.45; background: var(--panel-2); }
+.brd__msg:empty { display: none; }
+.brd__msg--ok { background: rgba(23, 163, 74, 0.1); }
+.brd__msg--bad { background: rgba(226, 52, 104, 0.09); }
+.brd__msg--info { background: rgba(10, 139, 208, 0.08); }
+.brd__wait { border: 2px dashed var(--line); border-radius: 16px; padding: 28px 20px; text-align: center; color: var(--text); aspect-ratio: 1 / 1; max-height: 420px; display: flex; flex-direction: column; justify-content: center; }
+.chip[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+/* --- план босса --- */
+.plan { display: flex; flex-direction: column; gap: 6px; }
+.plan__row { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 6px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); }
+.plan__body { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; font-size: 19px; }
+.plan__in { width: 64px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); font: 700 17px var(--body); text-align: center; background: var(--panel); color: var(--text); }
+.plan__in:focus { outline: none; border-color: var(--yellow); }
+.plan__acts { display: flex; gap: 2px; }
+.plan__row small { grid-column: 2 / 4; }
